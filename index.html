@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SongLore - Discover the Meaning Behind the Music</title>
+    <meta name="description" content="SongLore is the ultimate app for exploring lyrics, discovering AI summaries, and sharing song interpretations with a community of music lovers.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    
+    <header class="navbar">
+        <div class="container">
+            <a href="#" class="logo">SongLore</a>
+            <nav class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#community">Community</a>
+                <a href="#download" class="btn btn-outline">Get App</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero container">
+            <div class="hero-content">
+                <div class="badge">Now Available on iOS</div>
+                <h1 class="hero-title">Unlock the <span class="gradient-text">story</span> behind every song.</h1>
+                <p class="hero-subtitle">Dive deep into lyrics, share your interpretations, and discover what your favorite tracks really mean with SongLore.</p>
+                <div class="hero-cta">
+                    <a href="#download" class="btn btn-primary">Download on App Store</a>
+                    <a href="#features" class="btn btn-secondary">Explore Features</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-num">50k+</span>
+                        <span class="stat-label">Songs Decoded</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">10k+</span>
+                        <span class="stat-label">Active Users</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <img src="images/hero_app_mockup_1773072271729.png" alt="SongLore App Mockup" class="hero-image">
+                <div class="floating-card ai-card">
+                    <div class="ai-icon">✨</div>
+                    <div class="ai-text">
+                        <strong>AI Summary</strong>
+                        <span>Generates instant meaning...</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features container">
+            <div class="section-header">
+                <h2>Go Beyond the Lyrics</h2>
+                <p>Everything you need to understand the music you love.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Synced Lyrics</h3>
+                    <p>Follow along with real-time synced lyrics. Never miss a word or a beat of your favorite tracks.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI-Powered Summaries</h3>
+                    <p>Instantly grasp the core theme of complex songs with our intelligent AI summarization engine.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎧</div>
+                    <h3>Seamless Playback</h3>
+                    <p>Listen directly within the app. Integrated beautifully with your existing music library.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="community" class="social-section container">
+            <div class="social-content">
+                <h2>A Community of <span class="gradient-text">Music Lovers</span></h2>
+                <p>Music is better shared. Read what others think, post your own interpretations, and connect over shared emotional experiences.</p>
+                <ul class="benefit-list">
+                    <li>✓ Timestamped thoughts</li>
+                    <li>✓ Community voting & likes</li>
+                    <li>✓ Deep-dive discussions</li>
+                </ul>
+                <a href="#download" class="btn btn-primary mt-2">Join the Community</a>
+            </div>
+            <div class="social-image-wrapper">
+                <img src="images/social_interpretations_1773072292584.png" alt="SongLore Community Interpretations" class="social-image">
+            </div>
+        </section>
+
+        <section id="download" class="cta-section container">
+            <div class="cta-box glass-panel">
+                <h2>Ready to explore?</h2>
+                <p>Download SongLore today and change the way you listen to music forever.</p>
+                <a href="#" class="btn btn-primary btn-large">Get SongLore for iOS</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3 class="logo">SongLore</h3>
+                <p>Discover the meaning behind the music.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-column">
+                    <h4>App</h4>
+                    <a href="#">Features</a>
+                    <a href="#">Download</a>
+                    <a href="#">Pricing</a>
+                </div>
+                <div class="link-column">
+                    <h4>Support</h4>
+                    <a href="#">Help Center</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        <div class="container copyright">
+            <p>&copy; 2026 SongLore. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple scroll reveal
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .social-content, .social-image-wrapper, .cta-box').forEach(el => {
+            el.classList.add('reveal-on-scroll');
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
