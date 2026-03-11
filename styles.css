@@ -16,12 +16,15 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
-    overflow-x: hidden;
     position: relative;
     -webkit-font-smoothing: antialiased;
 }
@@ -60,7 +63,7 @@ body {
 
 /* Typography */
 h1 {
-    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -0.03em;
@@ -68,7 +71,7 @@ h1 {
 }
 
 h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(1.75rem, 6vw, 3rem);
     font-weight: 700;
     margin-bottom: 1rem;
     letter-spacing: -0.02em;
@@ -267,17 +270,42 @@ p {
     justify-content: center;
 }
 
-.hero-image {
+.iphone-frame {
+    position: relative;
     max-width: 100%;
+    margin: 0 auto;
+}
+
+.hero-frame {
     width: 320px;
-    border-radius: 40px;
+    border-radius: 44px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 100px rgba(0,210,255,0.1);
     transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.hero-image-wrapper:hover .hero-image {
+.hero-image-wrapper:hover .hero-frame {
     transform: perspective(1000px) rotateY(-5deg) rotateX(2deg) translateY(-10px);
+}
+
+.iphone-bezel {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+    pointer-events: none;
+    display: block;
+}
+
+.iphone-screen {
+    position: absolute;
+    top: 2.3%;
+    left: 4.8%;
+    width: 90.4%;
+    height: 95.4%;
+    border-radius: 12%; /* Scales with width nicely */
+    object-fit: cover;
+    z-index: 1;
 }
 
 .floating-card {
@@ -302,6 +330,7 @@ p {
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .ai-text strong {
@@ -368,9 +397,9 @@ p {
     flex: 1;
 }
 
-.social-image {
-    max-width: 100%;
-    border-radius: 24px;
+.social-frame {
+    width: 300px;
+    border-radius: 38px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.4);
 }
 
@@ -611,7 +640,7 @@ footer {
         justify-content: center;
     }
 
-    .hero-image {
+    .hero-frame {
         transform: rotate(0) !important;
     }
     
@@ -625,8 +654,43 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+
     .nav-links {
         display: none;
+    }
+
+    .hero {
+        padding-top: 6rem;
+        gap: 3rem;
+        min-height: auto;
+    }
+
+    .hero-stats {
+        gap: 1.5rem;
+    }
+
+    .features, .social-section, .cta-section {
+        padding: 4rem 1.5rem;
+    }
+    
+    .social-section {
+        gap: 3rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .glass-panel {
+        padding: 3rem 1.5rem;
+    }
+
+    .iphone-frame {
+        width: 100%;
+        max-width: 320px;
     }
 
     .policy-page {
