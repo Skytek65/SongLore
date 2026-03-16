@@ -24,7 +24,7 @@
             <nav class="nav-links">
                 <a href="#features">Features</a>
                 <a href="#community">Community</a>
-                <a href="#download" class="btn btn-outline">Get App</a>
+                <a href="https://apps.apple.com/us/app/song-lore/id6759627276" class="btn btn-outline" target="_blank">Get App</a>
             </nav>
         </div>
     </header>
@@ -36,7 +36,7 @@
                 <h1 class="hero-title">Unlock the <span class="gradient-text">story</span> inside every song.</h1>
                 <p class="hero-subtitle">SongLore brings music lovers into one polished space to explore meaning through thoughtful community interpretations, AI-powered summaries, and a deeper way to experience the music you already love, free of ads at launch.</p>
                 <div class="hero-cta">
-                    <a href="#download" class="btn btn-primary">Download on App Store</a>
+                    <a href="https://apps.apple.com/us/app/song-lore/id6759627276" class="btn btn-primary" target="_blank">Download on App Store</a>
                     <a href="#features" class="btn btn-secondary">Explore Features</a>
                 </div>
                 <div class="hero-stats">
@@ -99,7 +99,7 @@
                     <li>✓ Public profiles, follows, and likes</li>
                     <li>✓ A refined home for deeper music discussion</li>
                 </ul>
-                <a href="#download" class="btn btn-primary mt-2">Download on App Store</a>
+                <a href="https://apps.apple.com/us/app/song-lore/id6759627276" class="btn btn-primary mt-2" target="_blank">Join the Community</a>
             </div>
             <div class="social-image-wrapper">
                 <div class="iphone-frame social-frame">
@@ -113,7 +113,7 @@
             <div class="cta-box glass-panel">
                 <h2>Ready to hear more in every song?</h2>
                 <p>Download SongLore on the App Store and experience music with more perspective, more context, and a stronger sense of connection through community interpretation and AI insight.</p>
-                <a href="#" class="btn btn-primary btn-large">Get SongLore for iPhone</a>
+                <a href="https://apps.apple.com/us/app/song-lore/id6759627276" class="btn btn-primary btn-large" target="_blank">Available for iPhone</a>
             </div>
         </section>
     </main>
@@ -158,6 +158,19 @@
             el.classList.add('reveal-on-scroll');
             observer.observe(el);
         });
+    </script>
+
+    <script type="text/javascript">
+        window.doorbellOptions = {
+            "id": "14615",
+            "appKey": "flC0YT7MbxRh6dQFUAIN9uYTwOWw1kbMQDPj4t0f6RWSBZNoBVW69aOh5np8bNYo"
+        };
+        (function(w, d, t) {
+            var hasLoaded = false;
+            function l() { if (hasLoaded) { return; } hasLoaded = true; window.doorbellOptions.windowLoaded = true; var g = d.createElement(t);g.id = 'doorbellScript';g.type = 'text/javascript';g.crossorigin = 'anonymous';g.async = true;g.src = 'https://embed.doorbell.io/button/'+window.doorbellOptions['id']+'?t='+(new Date().getTime());(d.getElementsByTagName('head')[0]||d.getElementsByTagName('body')[0]).appendChild(g); }
+            if (w.attachEvent) { w.attachEvent('onload', l); } else if (w.addEventListener) { w.addEventListener('load', l, false); } else { l(); }
+            if (d.readyState == 'complete') { l(); }
+        }(window, document, 'script'));
     </script>
 </body>
 </html>
