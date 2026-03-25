@@ -3,25 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SongLore Additional Terms</title>
-    <meta name="description" content="Read the SongLore Additional Terms covering community participation, user content, AI-assisted features, and rules that apply alongside Apple's Standard EULA.">
+    <title>Additional Terms — SongLore</title>
+    <meta name="description" content="SongLore Additional Terms covering community participation, user content, AI-assisted features, and rules that apply alongside Apple's Standard EULA.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://songlore.app/terms.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Additional Terms — SongLore">
+    <meta property="og:description" content="SongLore Additional Terms covering community participation, user content, AI-assisted features, and rules that apply alongside Apple's Standard EULA.">
+    <meta property="og:url" content="https://songlore.app/terms.html">
+    <meta property="og:site_name" content="SongLore">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/songloreicon.png">
+    <link rel="apple-touch-icon" href="images/songloreicon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
 
     <header class="navbar">
         <div class="container">
-            <a href="index.html" class="logo logo-lockup">
-                <img src="images/songloreicon.png" alt="SongLore logo" class="logo-icon">
+            <a href="index.html" class="logo logo-lockup" aria-label="SongLore home">
+                <img src="images/songloreicon.png" alt="SongLore" class="logo-icon" width="32" height="32">
                 <span>SongLore</span>
             </a>
-            <nav class="nav-links">
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <svg class="icon-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                <svg class="icon-close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <nav class="nav-links" id="nav-links">
                 <a href="index.html">Home</a>
                 <a href="privacy.html">Privacy</a>
                 <a href="terms.html" class="btn btn-outline">Additional Terms</a>
@@ -139,10 +154,10 @@
         <div class="container footer-content">
             <div class="footer-brand">
                 <div class="logo logo-lockup footer-logo">
-                    <img src="images/songloreicon.png" alt="SongLore logo" class="logo-icon">
+                    <img src="images/songloreicon.png" alt="SongLore" class="logo-icon" width="32" height="32">
                     <span>SongLore</span>
                 </div>
-                <p>Discover a deeper meaning behind the music.</p>
+                <p>Discover the meaning behind the music.</p>
                 <div class="legal-links">
                     <a href="privacy.html">Privacy Policy</a>
                     <a href="terms.html">Additional Terms</a>
@@ -153,5 +168,22 @@
             <p>&copy; 2026 SongLore. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const toggle = document.querySelector('.nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+        toggle.addEventListener('click', () => {
+            const open = navLinks.classList.toggle('open');
+            toggle.classList.toggle('active');
+            toggle.setAttribute('aria-expanded', open);
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                toggle.classList.remove('active');
+                toggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
 </body>
 </html>
